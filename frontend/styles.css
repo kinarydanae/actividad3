@@ -1,0 +1,159 @@
+/*resetea o normaliza el css para que todos los elementos se comporten de la misma manera en todos los navegadores*/
+*, /*selecciona todos los elementos del documento*/
+*:before,
+*:after { /*incluye los pseudo-elementos before y after*/
+    padding: 0; /*elimina el padding por defecto*/
+    margin: 0; /*elimina el margin por defecto*/
+    box-sizing: border-box; /*incluye el padding y el border en el tamaño total del elemento*/
+}
+body{ /*estilo del body*/
+    height: 100vh; /*establece la altura del body al 100% de la ventana del navegador*/
+    background: #b07dda; /*establece el color de fondo del body*/;
+}
+#head-text{ /*estilo del encabezado*/
+    margin-top: 50px; /*margen superior*/
+    margin-left: 10px; /*margen izquierdo*/
+    font-family: sans-serif; /*fuente*/
+    color: #b07dda; /*color del texto*/
+}
+.container{ /*estilo del contenedor principal*/
+    width: 40%; /*ancho del contenedor*/
+    top: 20%; /*posicionamiento desde la parte superior*/
+    left: 50%; /*posicionamiento desde la parte izquierda*/
+    background: white; /*color de fondo*/
+    border-radius: 10px; /*bordes redondeados*/
+    min-width: 450px; /*ancho minimo*/
+    position: absolute; /*posicionamiento absoluto*/
+    min-height: 100px; /*altura minima*/
+    transform: translate(-50%,-50%); /*centra el contenedor*/
+}
+#newtask{ /*estilo del contenedor de nueva tarea*/
+    position: relative; /*posicionamiento relativo*/
+    padding: 30px 20px; /*relleno*/
+}
+#newtask input{ /*estilo del input*/
+    width: 75%; /*ancho del input*/
+    height: 45px; /*altura del input*/
+    padding: 12px; /*relleno interno*/
+    color: #111111; /*color del texto*/
+    font-weight: 500; /*grosor de la fuente*/
+    position: relative; /*posicionamiento relativo*/
+    border-radius: 5px; /*bordes redondeados*/
+    font-family: sans-serif; /*fuente*/
+    border: 2px solid #d3b5ec; /*borde*/
+    font-size: 15px; /*tamaño de fuente*/
+}
+#newtask input:focus{ /*estilo al enfocar el input*/
+    outline: none; /*elimina el contorno al enfocar*/
+    border-color: #b07dda; /*cambia el color del borde al enfocar*/
+}
+#newtask button{ /*estilo del boton*/
+    position: relative; /*posicionamiento relativo*/
+    float: right; /*flota a la derecha*/
+    font-weight: 500; /*grosor de la fuente*/
+    font-size: 16px; /*tamaño de fuente*/
+    background-color: #b07dda; /*color de fondo*/
+    border: none; /*sin borde*/
+    color: white; /*color del texto*/
+    cursor: pointer; /*cambia el cursor al pasar por encima*/
+    outline: none; /*elimina el contorno*/
+    width: 20%; /*ancho del boton*/
+    height: 45px; /*altura del boton*/
+    border-radius: 5px; /*bordes redondeados*/
+    font-family: sans-serif; /*fuente*/
+    transition: all 0.2s ease; /*transicion suave para hover*/
+}
+#newtask button:hover{ /*estilo al pasar el cursor por encima del boton*/
+    background-color: #9463bd; /*cambia el color de fondo*/
+    transform: scale(1.05); /*agranda el boton*/    
+}
+.tasks{ /*estilo del contenedor de tareas*/
+    position: absolute; /*posicionamiento absoluto*/
+    border-radius: 10px; /*bordes redondeados*/
+    width: 100%; /*ancho del contenedor*/
+    background-color: #FFFFFF; /*color de fondo*/
+    padding: 30px 20px; /*relleno*/
+    margin-top: 10px; /*margen superior*/
+    justify-content: space-between; /*espacio entre elementos*/
+}
+.tasks h3{ /*estilo del encabezado de tareas*/
+    font-family: sans-serif; /*fuente*/
+    font-size: 18px; /*tamaño de fuente*/
+    font-weight: 600; /*grosor de la fuente*/
+    margin-bottom: 20px; /*margen inferior*/
+    color:#b07dda; /*color del texto*/
+}
+.task-list{
+    max-height: 300px; /*altura maxima del contenedor*/
+    overflow-y: auto; /*barra de desplazamiento vertical*/
+    padding-right: 5px; /*relleno derecho*/
+}
+.tasks::-webkit-scrollbar{ /*estilo de la barra de desplazamiento*/
+    width: 10px; /*ancho de la barra*/
+}
+.task{ /*estilo de cada tarea*/
+    border-radius: 5px; /*bordes redondeados*/
+    align-items: center; /*alineacion de los elementos*/
+    justify-content: space-between; /*espacio entre elementos*/
+    cursor: pointer; /*cambia el cursor al pasar por encima*/
+    height: 50px; /*altura del contenedor*/
+    margin-bottom: 8px; /*margen inferior*/
+    padding: 10px 10px; /*relleno*/
+    display: flex; /*display flex*/
+    width: 100%; /*ancho del contenedor*/
+}
+.delete{ /*estilo del boton de eliminar*/
+    right: -5px; /*posicionamiento desde la derecha*/
+    padding: 5px 5px; /*relleno*/
+    background: #FFFFFF; /*color de fondo*/
+    border-radius: 4px; /*bordes redondeados*/
+    transform-origin: top right; /*origen de la transformacion*/
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.15); /*sombra*/
+    transition: transform 0.2s ease; /*transicion*/
+    z-index: 10; /*indice z*/
+}
+#check-task{ /*estilo del checkbox*/
+    margin-right: 20px; /*margen derecho*/
+}
+.task label{ /*estilo del label*/
+    font-family: sans-serif; /*fuente*/
+    font-size: 15px; /*tamaño de fuente*/
+    font-weight: 400; /*grosor de la fuente*/
+    display: flex; /*display flex*/
+    align-items: flex-start; /*alineacion de los elementos*/
+}
+.task label p.checked{ /*estilo para las tareas completadas*/
+    text-decoration: line-through; /*tachado del texto*/
+}
+.edit{
+    right: -5px; /*posicionamiento desde la derecha*/
+    padding: 5px 5px; /*relleno*/
+    background: #FFFFFF; /*color de fondo*/
+    border-radius: 4px; /*bordes redondeados*/
+    transform-origin: top right; /*origen de la transformacion*/
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.15); /*sombra*/
+    transition: transform 0.2s ease; /*transicion*/
+    z-index: 10; /*indice z*/
+}
+.logout-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    background-color: #a44f3c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    width: 60px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease; /* transición suave para hover */
+}
+.logout-btn:hover {
+    background-color: #a44f3c;
+    transform: scale(1.1);
+}
